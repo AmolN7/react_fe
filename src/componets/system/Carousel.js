@@ -1,6 +1,6 @@
 import Carousel from 'react-bootstrap/Carousel';
 
-function CusttomCarousel(props) {
+function CustomCarousel(props) {
     const { items = [] } = props;
 
     return (
@@ -21,4 +21,4 @@ function CusttomCarousel(props) {
         </Carousel>
     );
 }
-export default CusttomCarousel;
+export default CustomCarousel;
