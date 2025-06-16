@@ -1,0 +1,25 @@
+.App {
+    font-family: Arial, sans-serif;
+}
+
+.main {
+    margin: 10 px;
+    padding: 10px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    /* bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed; */
+
+}
+
+.min-heght {
+    min-height: 75vh;
+}
