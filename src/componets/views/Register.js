@@ -9,7 +9,7 @@ const Register = () => {
         <div className="container">
             <h1>Register</h1>
             <div className="row">
-                <div className="col-md-6 offset-md-3 border p-4 ">
+                <div className="col-md-6 offset-md-3 border p-4 rounded">
                     <Form>
                         <Form.Group className="mb-3" controlId="formFirstName">
                             <Form.Label>First Name</Form.Label>

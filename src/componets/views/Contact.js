@@ -9,7 +9,7 @@ const Contact = () => {
         <div className="container">
             <h1>Contact us</h1>
             <div className="row">
-                <div className="col-md-6  border p-4">
+                <div className="col-md-6  border p-4 rounded">
                     <Form>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
