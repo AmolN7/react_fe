@@ -8,7 +8,8 @@ import Contact from '../views/Contact';
 import PageNotFound from '../views/PageNotFound';
 import Login from '../views/Login';
 import Register from '../views/Register';
-
+import Product from '../views/Product';
+import Dashboard from '../views/Dashboard';
 
 const Main = (prop) => {
     return (
@@ -20,10 +21,14 @@ const Main = (prop) => {
                             <Route path="*" element={<PageNotFound />} /> {/* Fallback route to Home if no match is found */}
                             <Route path="/" element={<Home />} />
                             <Route path="/home" element={<Home />} />
+                            <Route path="/dashboard" element={<Dashboard />} />
                             <Route path="/about" element={<About />} />
                             <Route path="/contact" element={<Contact />} />
                             <Route path="/login" element={<Login />} />
                             <Route path="/register" element={<Register />} />
+                            <Route path="/product" element={<Product />} />
+                            {/* Add more routes as needed */}
+
                         </Routes>
                     </div>
                 </div>

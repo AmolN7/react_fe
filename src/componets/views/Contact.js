@@ -28,7 +28,6 @@ const Contact = () => {
                 </div>
                 <div className="col-md-4 offset-md-2">
                     <h2>Get in Touch</h2>
-
                     <p>If you have any questions, feel free to reach out to us at:</p>
                     <ul>
                         <li>Email: support@example.com</li>
