@@ -25,7 +25,7 @@
             "fuel_type": "Electric",
             "transmission": "Automatic",
             "availability_status": "Available",
-            "image": "https://images.unsplash.com/photo-1511918984145-48de785d4c4e?auto=compress&w=400&q=80",
+            "image": "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=compress&w=400&q=80",
             "description": "A luxury electric sedan with cutting-edge technology and performance.",
             "ratings": 4.8,
             "views": 2100
@@ -55,7 +55,7 @@
             "fuel_type": "Hybrid",
             "transmission": "Automatic",
             "availability_status": "Available",
-            "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=compress&w=400&q=80",
+            "image": "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=compress&w=400&q=80",
             "description": "A midsize sedan offering comfort, efficiency, and advanced safety features.",
             "ratings": 4.4,
             "views": 950
@@ -115,7 +115,7 @@
             "fuel_type": "Gasoline",
             "transmission": "Automatic",
             "availability_status": "Available",
-            "image": "https://images.unsplash.com/photo-1511391403515-1c1c5b6a1c8b?auto=compress&w=400&q=80",
+            "image": "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=compress&w=400&q=80",
             "description": "A refined and stylish sedan with advanced technology and comfort.",
             "ratings": 4.5,
             "views": 1300
@@ -145,7 +145,7 @@
             "fuel_type": "Gasoline",
             "transmission": "Automatic",
             "availability_status": "Available",
-            "image": "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=compress&w=400&q=80",
+            "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=compress&w=400&q=80",
             "description": "A rugged SUV built for off-road adventures and daily driving.",
             "ratings": 4.2,
             "views": 870

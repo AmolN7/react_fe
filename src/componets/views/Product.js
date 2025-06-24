@@ -1,45 +1,40 @@
-import { react, useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from '../system/Card';
 import { getProducts } from '../../services/userApiService';
 import useFetch from '../../hooks/useFetch';
+import SeachSideBar from '../views/SearchSideBar'
 const Product = () => {
-    const { data: products, loading, error } = useFetch(getProducts, 'products');
+    let { data: products, loading, error } = useFetch(getProducts, 'products');
     //console.log(products, loading, error);
+    const [searchParams, setSearchParams] = useState({ name: '', price: '', category: '' });
+    const filteredProducts = products && Array.isArray(products)
+        ? products.filter(product => {
+            const matchesName = searchParams.name === '' || product.name.toLowerCase().includes(searchParams.name.toLowerCase());
+            const matchesPrice = searchParams.price === '' || Number(product.price) <= Number(searchParams.price);
+            const matchesCategory = searchParams.category === '' || (product.category && product.category.toLowerCase() === searchParams.category.toLowerCase());
+            return matchesName && matchesPrice && matchesCategory;
+        })
+        : [];
+
+
+    products = (searchParams) !== '' ? (filteredProducts && filteredProducts.length > 0 ? filteredProducts : null) : products;
+
+
     return (
         <div className="container">
             <h1>Welcome to Product Gallery</h1>
             <div className="row">
                 {/* Sidebar */}
-                <div className="col-md-3">
-                    <div className="bg-light p-3 rounded">
-                        <h5>Search Products</h5>
-                        <form>
-                            <div className="mb-3">
-                                <label htmlFor="searchName" className="form-label">Name</label>
-                                <input type="text" className="form-control" id="searchName" placeholder="Product name" />
-                            </div>
-                            <div className="mb-3">
-                                <label htmlFor="searchPrice" className="form-label">Price</label>
-                                <input type="number" className="form-control" id="searchPrice" placeholder="Max price" />
-                            </div>
-                            <div className="mb-3">
-                                <label htmlFor="searchCategory" className="form-label">Category</label>
-                                <select className="form-select" id="searchCategory">
-                                    <option value="">All</option>
-                                    <option value="category1">Category 1</option>
-                                    <option value="category2">Category 2</option>
-                                    <option value="category3">Category 3</option>
-                                </select>
-                            </div>
-                            <button type="submit" className="btn btn-primary w-100">Search</button>
-                        </form>
-                    </div>
-                </div>
+                <SeachSideBar onSearch={setSearchParams} />
                 {/* Cards */}
                 <div className="col-md-9 d-flex flex-wrap">
+
                     {loading && <div className="text-center w-100">Loading...</div>}
-                    {error && <div className="text-danger w-100">Error: {error.message}</div>}
+                    {error && <div className="text-danger text-center w-100">Error: {error.message}</div>}
+                    {(!Array.isArray(products) || !products.every(product => product.id && product.name && product.image && product.price && product.description)) && <div className="text-danger text-center w-100">No products found</div>}
+                    {!products || products.length === 0 && <div className="text-center w-100">No products found</div>}
+
                     {products && products.map((product) => (
                         <Card
                             key={product.id}

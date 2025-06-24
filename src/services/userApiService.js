@@ -42,13 +42,12 @@ export const getProducts = async (endpoint) => {
         throw error;
     }
 }
-export const getProductById = async (endpoint, id) => {
+export const getProductsById = async (endpoint, id) => {
     try {
         const response = await axios.get(`${API_BASE_URL}/${endpoint}/${id}`);
-
         return response.data;
     } catch (error) {
         console.error('Error fetching data:', error);
         throw error;
     }
-};
+}
