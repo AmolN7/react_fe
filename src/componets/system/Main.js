@@ -1,7 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route } from "react-router";
-
 import Home from '../views/Home';
 import About from '../views/About';
 import Contact from '../views/Contact';
@@ -10,6 +9,7 @@ import Login from '../views/Login';
 import Register from '../views/Register';
 import Product from '../views/Product';
 import Dashboard from '../views/Dashboard';
+import ProductDetails from '../views/ProductDetails';
 
 const Main = (prop) => {
     return (
@@ -27,8 +27,7 @@ const Main = (prop) => {
                             <Route path="/login" element={<Login />} />
                             <Route path="/register" element={<Register />} />
                             <Route path="/product" element={<Product />} />
-                            {/* Add more routes as needed */}
-
+                            <Route path="/product/:id" element={<ProductDetails />} />
                         </Routes>
                     </div>
                 </div>

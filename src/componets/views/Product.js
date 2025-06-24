@@ -1,10 +1,14 @@
 import { react, useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from '../system/Card';
+import { getProducts } from '../../services/userApiService';
+import useFetch from '../../hooks/useFetch';
 const Product = () => {
+    const { data: products, loading, error } = useFetch(getProducts, 'products');
+    //console.log(products, loading, error);
     return (
         <div className="container">
-            <h1>Welcome to My React Client App</h1>
+            <h1>Welcome to Product Gallery</h1>
             <div className="row">
                 {/* Sidebar */}
                 <div className="col-md-3">
@@ -34,14 +38,23 @@ const Product = () => {
                 </div>
                 {/* Cards */}
                 <div className="col-md-9 d-flex flex-wrap">
-                    <Card image="https://www.guvi.in/assets/Baq-GG32-data-science.webp" title="Card Title" description="This is a brief description of the card content. It provides an overview of what the card is about." link="#" />
-                    <Card image="https://www.guvi.in/assets/Baq-GG32-data-science.webp" title="Card Title" description="This is a brief description of the card content. It provides an overview of what the card is about." link="#" />
-                    <Card image="https://www.guvi.in/assets/Baq-GG32-data-science.webp" title="Card Title" description="This is a brief description of the card content. It provides an overview of what the card is about." link="#" />
-                    <Card image="https://www.guvi.in/assets/Baq-GG32-data-science.webp" title="Card Title" description="This is a brief description of the card content. It provides an overview of what the card is about." link="#" />
-                    <Card image="https://www.guvi.in/assets/Baq-GG32-data-science.webp" title="Card Title" description="This is a brief description of the card content. It provides an overview of what the card is about." link="#" />
-                    <Card image="https://www.guvi.in/assets/Baq-GG32-data-science.webp" title="Card Title" description="This is a brief description of the card content. It provides an overview of what the card is about." link="#" />
-                    <Card image="https://www.guvi.in/assets/Baq-GG32-data-science.webp" title="Card Title" description="This is a brief description of the card content. It provides an overview of what the card is about." link="#" />
-                    <Card image="https://www.guvi.in/assets/Baq-GG32-data-science.webp" title="Card Title" description="This is a brief description of the card content. It provides an overview of what the card is about." link="#" />
+                    {loading && <div className="text-center w-100">Loading...</div>}
+                    {error && <div className="text-danger w-100">Error: {error.message}</div>}
+                    {products && products.map((product) => (
+                        <Card
+                            key={product.id}
+                            image={product.image}
+                            title={product.name}
+                            description={product.description}
+                            link={`/product/${product.id}`}
+                            brand={product.brand}
+                            price={product.price}
+                            model={product.model}
+                            fuel_type={product.fuel_type}
+                            year={product.year}
+
+                        />
+                    ))}
                 </div>
             </div>
         </div>
