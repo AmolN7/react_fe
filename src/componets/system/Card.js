@@ -1,8 +1,8 @@
 const Card = ({ image, title, description, link, brand, model, price, fuel_type, year }) => {
     return (
         <div className="mb-4">
-            <div className="card">
-                <div className="row g-0 flex-column flex-md-row">
+            <div className="card " >
+                <div className="row g-0 flex-column flex-md-row" >
                     <div className="col-md-4">
                         <a href={link}>
                             <img

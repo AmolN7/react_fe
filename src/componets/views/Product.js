@@ -9,6 +9,8 @@ const Product = () => {
     // State for pagination
     const [currentPage, setCurrentPage] = useState(1);
     const productsPerPage = 4; // or any number you want per page
+    const [sortBy, setSortBy] = useState('');
+    const [sortDirection, setSortDirection] = useState('asc');
 
     let { data: products, loading, error } = useFetch(getProducts, 'products');
     //console.log(products, loading, error);
@@ -24,7 +26,16 @@ const Product = () => {
         })
         : [];
 
-    //filteredProducts = (searchParams) !== '' ? (filteredProducts && filteredProducts.length > 0 ? filteredProducts : null) : products;
+    // Sort filteredProducts based on sortBy and sortDirection
+    if (sortBy) {
+        filteredProducts = [...filteredProducts].sort((a, b) => {
+            let result = 0;
+            if (sortBy === 'price') result = Number(a.price) - Number(b.price);
+            if (sortBy === 'name') result = a.name.localeCompare(b.name);
+            if (sortBy === 'brand') result = (a.brand || '').localeCompare(b.brand || '');
+            return sortDirection === 'asc' ? result : -result;
+        });
+    }
 
     // Pagination logic
     const indexOfLastProduct = currentPage * productsPerPage;
@@ -44,6 +55,25 @@ const Product = () => {
                 />
                 {/* Cards */}
                 <div className="col-md-9 d-flex flex-wrap">
+                    <div className="d-flex justify-content-end w-100 mb-3 gap-2">
+                        <select
+                            className="form-select w-auto"
+                            value={sortBy}
+                            onChange={e => setSortBy(e.target.value)}
+                        >
+                            <option value="">Sort By</option>
+                            <option value="price">Price</option>
+                            <option value="name">Name</option>
+                            <option value="brand">Brand Name</option>
+                        </select>
+                        <button
+                            className="btn btn-outline-secondary"
+                            type="button"
+                            onClick={() => setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc')}
+                        >
+                            {sortDirection === 'asc' ? 'Asc' : 'Desc'}
+                        </button>
+                    </div>
 
                     {loading && <div className="text-center w-100">Loading...</div>}
                     {error && <div className="text-danger text-center w-100">Error: {error.message}</div>}
