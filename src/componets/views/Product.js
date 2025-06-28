@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from '../system/Card';
-import { getProducts } from '../../services/userApiService';
+import { getProducts } from '../../services/productApiService';
 import useFetch from '../../hooks/useFetch';
 import SeachSideBar from '../views/SearchSideBar'
+import Loading from '../system/Loading';
+import Error from '../system/messages/Error';
+import NoData from '../system/messages/NoData';
 
 const Product = () => {
     // State for pagination
@@ -45,6 +48,26 @@ const Product = () => {
     return (
         <div className="container">
             <h1>Welcome to Product Gallery</h1>
+            <div className="d-flex justify-content-end w-100 mb-3 gap-2">
+                <select
+                    className="form-select w-auto"
+                    value={sortBy}
+                    onChange={e => setSortBy(e.target.value)}
+                >
+                    <option value="">Sort By</option>
+                    <option value="price">Price</option>
+                    <option value="name">Name</option>
+                    <option value="brand">Brand Name</option>
+                </select>
+                <button
+                    className="btn btn-outline-secondary"
+                    type="button"
+                    onClick={() => setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc')}
+                >
+                    {sortDirection === 'asc' ? 'Asc' : 'Desc'}
+                </button>
+            </div>
+
             <div className="row">
                 {/* Sidebar */}
                 <SeachSideBar
@@ -55,30 +78,11 @@ const Product = () => {
                 />
                 {/* Cards */}
                 <div className="col-md-9 d-flex flex-wrap">
-                    <div className="d-flex justify-content-end w-100 mb-3 gap-2">
-                        <select
-                            className="form-select w-auto"
-                            value={sortBy}
-                            onChange={e => setSortBy(e.target.value)}
-                        >
-                            <option value="">Sort By</option>
-                            <option value="price">Price</option>
-                            <option value="name">Name</option>
-                            <option value="brand">Brand Name</option>
-                        </select>
-                        <button
-                            className="btn btn-outline-secondary"
-                            type="button"
-                            onClick={() => setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc')}
-                        >
-                            {sortDirection === 'asc' ? 'Asc' : 'Desc'}
-                        </button>
-                    </div>
 
-                    {loading && <div className="text-center w-100">Loading...</div>}
-                    {error && <div className="text-danger text-center w-100">Error: {error.message}</div>}
-                    {(!Array.isArray(products) || !products.every(product => product.id && product.name && product.image && product.price && product.description)) && <div className="text-danger text-center w-100">No products found</div>}
-                    {!products || products.length === 0 && <div className="text-center w-100">No products found</div>}
+                    {loading && <Loading />}
+                    {error && <Error error={error} />}
+                    {((!Array.isArray(products) || !products.every(product => product.id && product.name && product.image && product.price && product.description)) && !loading) && <NoData message="No products available at the moment." />}
+                    {!products || products.length === 0 && <NoData message="No products found." />}
 
                     {currentProducts.map((product) => (
                         <Card

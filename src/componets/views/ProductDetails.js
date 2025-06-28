@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { getProductsById } from '../../services/userApiService';
+import { getProductsById } from '../../services/productApiService';
 import useFetch from '../../hooks/useFetch';
 import { useParams } from 'react-router-dom';
 

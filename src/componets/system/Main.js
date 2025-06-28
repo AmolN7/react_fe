@@ -10,7 +10,8 @@ import Register from '../views/Register';
 import Product from '../views/Product';
 import Dashboard from '../views/Dashboard';
 import ProductDetails from '../views/ProductDetails';
-
+import Logout from '../views/Logout';
+import Cart from '../views/Cart';
 const Main = (prop) => {
     return (
         <main className={prop.className}>
@@ -28,6 +29,8 @@ const Main = (prop) => {
                             <Route path="/register" element={<Register />} />
                             <Route path="/product" element={<Product />} />
                             <Route path="/product/:id" element={<ProductDetails />} />
+                            <Route path="/logout" element={<Logout />} />
+                            <Route path="/cart" element={<Cart />} />
                         </Routes>
                     </div>
                 </div>

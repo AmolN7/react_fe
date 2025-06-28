@@ -71,3 +71,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 ### `npm install -g json-server --save` install Json server
+### `npx json-server --watch db.json --port 4000 ` run Json server
+
+### `npm install @reduxjs/toolkit react-redux ` Install redux tool kit

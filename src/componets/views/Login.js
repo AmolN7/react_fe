@@ -5,7 +5,20 @@ import Form from 'react-bootstrap/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Formik, Form as FormikForm, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+//import { setAuth, getAuth } from '../../services/services'
+import { userLogin } from '../../services/userApiService';
+//for redirection
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux'
+import { setAuthUser, loadUserFromStorage } from '../../app/features/auth/authSlice'
+
 const Login = () => {
+    const location = useLocation();
+    //console.log(location);
+    const { message } = location.state || {};
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
     const initialValues = {
         username: '',
         password: '',
@@ -20,7 +33,19 @@ const Login = () => {
             password: values.password
         }
         try {
-            alert(`Username: ${values.username}, Password: ${values.password}`);
+            // alert(`Username: ${values.username}, Password: ${values.password}`);
+            const loginData = await userLogin('login', {});
+            if (loginData && loginData.token) {
+                //setAuth(loginData);
+                dispatch(setAuthUser(loginData))
+                dispatch(loadUserFromStorage())
+                //const { isAuthSet, authData } = getAuth();
+                navigate('/dashboard');
+            } else {
+                alert("Invalid login credentials.");
+            }
+
+
         } catch (error) {
             alert("something went wrong..!")
         }

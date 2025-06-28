@@ -1,7 +1,7 @@
 {
     "products": [
         {
-            "id": 1,
+            "id": "1",
             "name": "Civic",
             "brand": "Honda",
             "model": "EX",
@@ -16,7 +16,7 @@
             "views": 1200
         },
         {
-            "id": 2,
+            "id": "2",
             "name": "Model S",
             "brand": "Tesla",
             "model": "Plaid",
@@ -31,7 +31,7 @@
             "views": 2100
         },
         {
-            "id": 3,
+            "id": "3",
             "name": "Mustang",
             "brand": "Ford",
             "model": "GT",
@@ -46,7 +46,7 @@
             "views": 1850
         },
         {
-            "id": 4,
+            "id": "4",
             "name": "Camry",
             "brand": "Toyota",
             "model": "XSE",
@@ -61,7 +61,7 @@
             "views": 950
         },
         {
-            "id": 5,
+            "id": "5",
             "name": "Accord",
             "brand": "Honda",
             "model": "Sport",
@@ -76,7 +76,7 @@
             "views": 1100
         },
         {
-            "id": 6,
+            "id": "6",
             "name": "F-150",
             "brand": "Ford",
             "model": "Lariat",
@@ -91,7 +91,7 @@
             "views": 900
         },
         {
-            "id": 7,
+            "id": "7",
             "name": "3 Series",
             "brand": "BMW",
             "model": "330i",
@@ -106,7 +106,7 @@
             "views": 1600
         },
         {
-            "id": 8,
+            "id": "8",
             "name": "A4",
             "brand": "Audi",
             "model": "Premium",
@@ -121,7 +121,7 @@
             "views": 1300
         },
         {
-            "id": 9,
+            "id": "9",
             "name": "CX-5",
             "brand": "Mazda",
             "model": "Grand Touring",
@@ -136,7 +136,7 @@
             "views": 980
         },
         {
-            "id": 10,
+            "id": "10",
             "name": "Cherokee",
             "brand": "Jeep",
             "model": "Trailhawk",
@@ -151,7 +151,7 @@
             "views": 870
         },
         {
-            "id": 11,
+            "id": "11",
             "name": "Car 11",
             "brand": "Brand 1",
             "model": "Model 1",
@@ -166,7 +166,7 @@
             "views": 111
         },
         {
-            "id": 12,
+            "id": "12",
             "name": "Car 12",
             "brand": "Brand 2",
             "model": "Model 2",
@@ -181,7 +181,7 @@
             "views": 112
         },
         {
-            "id": 13,
+            "id": "13",
             "name": "Car 13",
             "brand": "Brand 3",
             "model": "Model 3",
@@ -196,7 +196,7 @@
             "views": 113
         },
         {
-            "id": 14,
+            "id": "14",
             "name": "Car 14",
             "brand": "Brand 4",
             "model": "Model 4",
@@ -211,7 +211,7 @@
             "views": 114
         },
         {
-            "id": 15,
+            "id": "15",
             "name": "Car 15",
             "brand": "Brand 5",
             "model": "Model 5",
@@ -226,7 +226,7 @@
             "views": 115
         },
         {
-            "id": 16,
+            "id": "16",
             "name": "Car 16",
             "brand": "Brand 6",
             "model": "Model 6",
@@ -241,7 +241,7 @@
             "views": 116
         },
         {
-            "id": 17,
+            "id": "17",
             "name": "Car 17",
             "brand": "Brand 7",
             "model": "Model 7",
@@ -256,7 +256,7 @@
             "views": 117
         },
         {
-            "id": 18,
+            "id": "18",
             "name": "Car 18",
             "brand": "Brand 8",
             "model": "Model 8",
@@ -271,7 +271,7 @@
             "views": 118
         },
         {
-            "id": 19,
+            "id": "19",
             "name": "Car 19",
             "brand": "Brand 9",
             "model": "Model 9",
@@ -286,7 +286,7 @@
             "views": 119
         },
         {
-            "id": 20,
+            "id": "20",
             "name": "Car 20",
             "brand": "Brand 10",
             "model": "Model 10",
@@ -297,11 +297,11 @@
             "availability_status": "Sold",
             "image": "https://images.unsplash.com/photo-1461632830798-3adb3034e4c8?auto=compress&w=400&q=80",
             "description": "Sample description for Car 20.",
-            "ratings": 4.0,
+            "ratings": 4,
             "views": 120
         },
         {
-            "id": 21,
+            "id": "21",
             "name": "Car 21",
             "brand": "Brand 1",
             "model": "Model 1",
@@ -316,7 +316,7 @@
             "views": 121
         },
         {
-            "id": 22,
+            "id": "22",
             "name": "Car 22",
             "brand": "Brand 2",
             "model": "Model 2",
@@ -331,7 +331,7 @@
             "views": 122
         },
         {
-            "id": 23,
+            "id": "23",
             "name": "Car 23",
             "brand": "Brand 3",
             "model": "Model 3",
@@ -346,7 +346,7 @@
             "views": 123
         },
         {
-            "id": 24,
+            "id": "24",
             "name": "Car 24",
             "brand": "Brand 4",
             "model": "Model 4",
@@ -361,7 +361,7 @@
             "views": 124
         },
         {
-            "id": 25,
+            "id": "25",
             "name": "Car 25",
             "brand": "Brand 5",
             "model": "Model 5",
@@ -376,7 +376,7 @@
             "views": 125
         },
         {
-            "id": 26,
+            "id": "26",
             "name": "Car 26",
             "brand": "Brand 6",
             "model": "Model 6",
@@ -391,7 +391,7 @@
             "views": 126
         },
         {
-            "id": 27,
+            "id": "27",
             "name": "Car 27",
             "brand": "Brand 7",
             "model": "Model 7",
@@ -406,7 +406,7 @@
             "views": 127
         },
         {
-            "id": 28,
+            "id": "28",
             "name": "Car 28",
             "brand": "Brand 8",
             "model": "Model 8",
@@ -421,7 +421,7 @@
             "views": 128
         },
         {
-            "id": 29,
+            "id": "29",
             "name": "Car 29",
             "brand": "Brand 9",
             "model": "Model 9",
@@ -436,7 +436,7 @@
             "views": 129
         },
         {
-            "id": 30,
+            "id": "30",
             "name": "Car 30",
             "brand": "Brand 10",
             "model": "Model 10",
@@ -447,8 +447,45 @@
             "availability_status": "Sold",
             "image": "https://images.unsplash.com/photo-1461632830798-3adb3034e4c8?auto=compress&w=400&q=80",
             "description": "Sample description for Car 30.",
-            "ratings": 4.0,
+            "ratings": 4,
             "views": 130
+        }
+    ],
+    "users": [
+        {
+            "id": "1",
+            "email": "user@example.com",
+            "password": "123456",
+            "name": "John Doe",
+            "token": "fake-jwt-token-123"
+        }
+    ],
+    "login": [
+        {
+            "id": "1",
+            "email": "user@example.com",
+            "name": "John Doe",
+            "token": "fake-jwt-token-123"
+        }
+    ],
+    "cart": [
+        {
+            "cart_id": "1",
+            "user_id": "1",
+            "items": [
+                {
+                    "id": "1",
+                    "name": "Product 1",
+                    "price": "19.99",
+                    "quantity": "2"
+                },
+                {
+                    "id": "2",
+                    "name": "Product 2",
+                    "price": "9.99",
+                    "quantity": "1"
+                }
+            ]
         }
     ]
 }
