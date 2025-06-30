@@ -12,6 +12,7 @@ import Dashboard from '../views/Dashboard';
 import ProductDetails from '../views/ProductDetails';
 import Logout from '../views/Logout';
 import Cart from '../views/Cart';
+import PrivateRoute from './PrivateRoute';
 const Main = (prop) => {
     return (
         <main className={prop.className}>
@@ -30,7 +31,12 @@ const Main = (prop) => {
                             <Route path="/product" element={<Product />} />
                             <Route path="/product/:id" element={<ProductDetails />} />
                             <Route path="/logout" element={<Logout />} />
-                            <Route path="/cart" element={<Cart />} />
+                            {/* Private route created */}
+                            <Route path="/cart" element={
+                                <PrivateRoute>
+                                    <Cart />
+                                </PrivateRoute>
+                            } />
                         </Routes>
                     </div>
                 </div>

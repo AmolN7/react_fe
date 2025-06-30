@@ -4,6 +4,7 @@ const LOGIN_ENDPOINT = `login`;
 const SIGNUP_ENDPOINT = `sign-up`;
 const PRODUCTS_ENDPOINT = `products`;
 const CATEGORIES_ENDPOINT = `categories`;
+const CART_ENDPOINT = `cart`;
 
 export {
     BASE_URL,

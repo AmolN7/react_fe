@@ -10,7 +10,7 @@ import { userLogin } from '../../services/userApiService';
 //for redirection
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux'
-import { setAuthUser, loadUserFromStorage } from '../../app/features/auth/authSlice'
+import { setAuthUser, loadUserFromStorage } from '../../store/features/auth/authSlice'
 
 const Login = () => {
     const location = useLocation();

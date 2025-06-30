@@ -5,15 +5,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //import { getAuth } from '../../services/services';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { loadUserFromStorage } from '../../app/features/auth/authSlice'
+import { loadUserFromStorage } from '../../store/features/auth/authSlice'
 
 
 const Navigation = () => {
     //const { isAuthSet, authData } = getAuth();
+    //get cart count
+    const cart = useSelector(state => state.cart.cart);
+    const cartCount = cart.reduce((sum, item) => Number(sum) + Number(item.quantity), 0);
+
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(loadUserFromStorage());
-    }, [])
+    }, [dispatch])
     const authUserData = useSelector((state) => state.auth)
     //alert(authUserData.token)
     //console.log('>>', JSON.stringify(authUserData))
@@ -58,7 +62,7 @@ const Navigation = () => {
                             <Link className="nav-link position-relative" to="/cart">
                                 <i className="bi bi-cart" style={{ fontSize: '1.3rem' }}></i>
                                 <span className="translate-middle badge rounded-pill bg-danger start-100 " style={{ fontSize: '0.7rem' }}>
-                                    0
+                                    {cartCount}
                                 </span>
                             </Link>
                         </li>

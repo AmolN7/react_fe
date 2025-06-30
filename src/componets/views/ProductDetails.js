@@ -3,10 +3,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { getProductsById } from '../../services/productApiService';
 import useFetch from '../../hooks/useFetch';
 import { useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../store/features/cart/cartSlice';
+
 
 const ProductDetails = () => {
     const { id } = useParams();
     const { data: product, loading, error } = useFetch(getProductsById, 'products', id);
+    const dispatch = useDispatch();
 
     if (loading) return <div className="text-center">Loading...</div>;
     if (error) return <div className="text-danger text-center">Error: {error.message}</div>;
@@ -19,7 +23,9 @@ const ProductDetails = () => {
     if (!product.name || !product.image || !product.price || !product.description) {
         return <div className="text-danger text-center">Product data is incomplete</div>;
     }
-
+    const handleAddToCart = () => {
+        dispatch(addToCart({ ...product, quantity: 1 }));
+    };
     return (
 
 
@@ -41,7 +47,7 @@ const ProductDetails = () => {
                         </span>
                     </div>
                     <p>{product.description}</p>
-                    <button className="btn btn-primary mt-3">Add to Cart</button>
+                    <button className="btn btn-primary mt-3" onClick={handleAddToCart}>Add to Cart</button>
                 </div>
             </div>
         </div>);

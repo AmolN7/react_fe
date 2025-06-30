@@ -1,7 +1,7 @@
 import { removeAuth } from "../../services/services"
 import { useLocation, useNavigate } from 'react-router-dom';
 import React, { useEffect } from "react";
-import { logout } from '../../app/features/auth/authSlice'
+import { logout } from '../../store/features/auth/authSlice'
 import { useDispatch } from "react-redux";
 
 const Logout = () => {
